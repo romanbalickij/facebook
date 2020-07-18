@@ -20,17 +20,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f05981c4-ee97-4f2b-b40d-f75e2f3f6b5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Scopes/Reverse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/Nav.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/NewPost.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Post.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Sidebar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/title.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/views/NewsFeed.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/views/Users/Show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vue.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vue.loc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/PostCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/PostCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/PostResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/PostResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_12_133353_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_12_133353_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Nav.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +67,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -168,6 +191,7 @@
       <path value="$PROJECT_DIR$/vendor/league/event" />
       <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
       <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
     </include_path>
   </component>
   <component name="ProjectId" id="1dclfIJJYnzBEuc3DUB0YuhnqLP" />
@@ -230,7 +254,10 @@
       <workItem from="1594472703364" duration="13391000" />
       <workItem from="1594548014393" duration="8097000" />
       <workItem from="1594558521180" duration="9472000" />
-      <workItem from="1594741126879" duration="374000" />
+      <workItem from="1594741126879" duration="9512000" />
+      <workItem from="1594750898860" duration="3000" />
+      <workItem from="1594912069937" duration="12250000" />
+      <workItem from="1595068447393" duration="14546000" />
     </task>
     <servers />
   </component>
@@ -258,18 +285,18 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="589" y="210" width="804" height="684" key="#Options/72.27.1848.1053@72.27.1848.1053" timestamp="1593541255259" />
-    <state x="1446" y="329" width="422" height="645" key="#com.intellij.ide.util.MemberChooser" timestamp="1594564344271">
+    <state x="1446" y="329" width="422" height="645" key="#com.intellij.ide.util.MemberChooser" timestamp="1595072088387">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1446" y="329" width="422" height="645" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1594564344271" />
-    <state x="1507" y="342" width="374" height="454" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594477922348">
+    <state x="1446" y="329" width="422" height="645" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1595072088387" />
+    <state x="1507" y="342" width="374" height="454" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595069398229">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1507" y="342" width="374" height="454" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1594477922348" />
-    <state x="1386" y="319" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594484267209">
+    <state x="1507" y="342" width="374" height="454" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1595069398229" />
+    <state x="1386" y="319" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594750252871">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1386" y="319" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1594484267209" />
+    <state x="1386" y="319" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1594750252871" />
     <state width="1354" height="2" key="GridCell.Tab.0.bottom" timestamp="1592937196761">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -290,14 +317,14 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="920" y="364" width="457" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1594564324944" />
-    <state x="622" y="334" key="run.anything.popup" timestamp="1594477478380">
+    <state x="622" y="334" key="run.anything.popup" timestamp="1594744407173">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="622" y="334" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1594477478380" />
-    <state x="1219" y="401" width="672" height="678" key="search.everywhere.popup" timestamp="1594480800312">
+    <state x="622" y="334" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1594744407173" />
+    <state x="1219" y="401" width="672" height="678" key="search.everywhere.popup" timestamp="1594744121876">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1219" y="401" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1594480800312" />
+    <state x="1219" y="401" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1594744121876" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -314,6 +341,11 @@
             <option name="methodName" value="boot" />
           </properties>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/views/NewsFeed.vue</url>
+          <line>19</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

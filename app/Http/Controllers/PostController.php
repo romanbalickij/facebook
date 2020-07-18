@@ -12,7 +12,7 @@ class PostController extends Controller
 
     public function index() {
 
-        return new PostCollection(request()->user()->posts);
+        return  PostResource::collection(request()->user()->posts);
     }
 
     public function store(Request $request) {

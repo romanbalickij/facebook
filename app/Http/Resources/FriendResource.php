@@ -2,10 +2,9 @@
 
 namespace App\Http\Resources;
 
-use App\Friend;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class FriendResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,17 +15,16 @@ class UserResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'data' => [
-                'type' => 'users',
-                'user_id' => $this->id,
+            'data' =>[
+                'type' =>'friend-request',
+                'friend_request_id' => $this->id,
                 'attributes' => [
-                    'name' => $this->name,
-                    'friendship' => new FriendResource(Friend::friendship($this->id)),
-
+                    'confirmed_at' => optional($this->confirmed_at)->diffForHumans(),
                 ]
             ],
+
             'links' => [
-                'self' => url('/users/'.$this->id),
+                'self' => url('/users/'.$this->friend_id)
             ]
         ];
     }
