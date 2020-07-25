@@ -16,12 +16,15 @@ class PostResource extends JsonResource
     {
         return [
             'data' => [
-                'type' => 'posts',
+                'type'    => 'posts',
                 'post_id' => $this->id,
                 "attributes" => [
                     "posted_by" => new UserResource($this->user),
-                    "body" => $this->body,
-                    "image" => $this->image,
+                  //  'likes'     => LikeResource::collection($this->likes),
+                    'likes' => new LikeCollection($this->likes),
+                    'comments'  => new CommentCollection($this->comments),
+                    "body"      => $this->body,
+                    "image"     => $this->image,
                     'posted_at' => $this->created_at->diffForHumans(),
                 ],
                 'links' => [

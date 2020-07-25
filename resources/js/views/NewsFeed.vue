@@ -1,8 +1,11 @@
 <template>
     <div class="flex flex-col items-center py-4">
+
         <NewPost></NewPost>
-        <p v-if="loading">Loading...</p>
-        <Post v-else v-for="post in posts.data" :post="post" :key="post.data.post_id"/>
+
+        <p v-if="newsStatus.newsPostsStatus === 'loading'">Loading...</p>
+
+        <Post v-else v-for="(post, postKey) in posts.data" :post="post" :key="postKey"/>
 
     </div>
 </template>
@@ -10,6 +13,7 @@
 <script>
     import NewPost from "../components/NewPost";
     import Post from "../components/Post";
+    import {mapGetters} from 'vuex';
 
     export default {
         name: "NewsFeed",
@@ -18,24 +22,17 @@
             NewPost,
             Post,
         },
-        data:() => {
-            return {
-                posts:[],
-                loading:true,
-            }
+        mounted() {
+            this.$store.dispatch('fetchNewsPosts');
         },
 
-        mounted() {
-            axios.get('/api/posts/')
-            .then(response => {
-                this.posts   = response.data;
-                this.loading = false;
-
-            })
-            .catch(error => {
-                console.log('error post get')
+        computed:{
+            ...mapGetters({
+                posts:'newsPosts',
+                newsStatus:'newsStatus',
             })
         }
+
     }
 </script>
 

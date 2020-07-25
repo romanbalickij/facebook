@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center" v-if="status.user === 'success' && user">
         <div class="relative mb-8">
             <div class="w-100 h-64 overflow-hidden z-10">
                 <img src="https://i.pinimg.com/originals/af/18/54/af1854b640dc6e65046e6663f0ac51a0.jpg" class="object-cover w-full">
@@ -12,19 +12,32 @@
             </div>
 
             <div class="absolute flex items-center bottom-0 right-0 mb-8 mr-12 z-20">
-                <button v-if="friendButtonText"
+                <button v-if="friendButtonText && friendButtonText !=='Accept'"
                         class="py-1 px-3 bg-gray-200 rounded"
                         @click="$store.dispatch('sendFriendRequest',$route.params.userId)">
-                    {{friendButtonText}}</button>
+                    {{friendButtonText}}
+                </button>
+
+                <button v-if="friendButtonText && friendButtonText ==='Accept'"
+                        class="mr-2 py-1 px-3 bg-blue-500 rounded"
+                        @click="$store.dispatch('acceptFriendRequest',$route.params.userId)">
+                    Accept
+                </button>
+
+                <button v-if="friendButtonText && friendButtonText ==='Accept'"
+                        class="py-1 px-3 bg-gray-400 rounded"
+                        @click="$store.dispatch('ignoreFriendRequest',$route.params.userId)">
+                    Ignore
+                </button>
             </div>
-
-
         </div>
 
-        <p v-if="postLoading">Loading...</p>
+        <div v-if="status.post === 'loading'">Loading...</div>
+
+        <div v-else-if="posts.data.length < 1">No posts found</div>
+
         <Post v-else v-for="post in posts.data" :post="post" :key="post.data.post_id"/>
 
-        <p v-if="!postLoading && posts.data.length < 1">No posts found</p>
     </div>
 </template>
 
@@ -34,15 +47,6 @@
 
     export default {
         name: "Show",
-        data:()=> {
-
-            return {
-
-                posts:null,
-                userLoading:true,
-                postLoading:true,
-            }
-        },
 
         components:{
           Post
@@ -50,26 +54,15 @@
 
         mounted() {
             this.$store.dispatch('fetchUser', this.$route.params.userId)
-
-            axios.get('/api/users/'+ this.$route.params.userId + '/posts')
-                .then(response => {
-                    this.posts   = response.data;
-
-
-                })
-                .catch(error => {
-                    console.log('error post get')
-                })
-                .finally(() =>{
-                    this.postLoading = false;
-                })
-
+            this.$store.dispatch('fetchUserPost', this.$route.params.userId)
         },
 
         computed:{
             ...mapGetters({
                 user:'user',
-                friendButtonText:'friendButtonText'
+                friendButtonText:'friendButtonText',
+                posts:'posts',
+                status:'status'
             })
 
         }

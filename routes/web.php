@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Resources\LikeResource;
 use App\Http\Resources\PostCollection;
 use App\Http\Resources\PostResource;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,11 @@ Route::get('{any}', 'AppController@index')
 
 //Route::get('/deb', function (){
 //
-//$ss =  PostResource::collection(\App\User::find(1)->posts);
+//
+//
+//
+//    //return auth()->user()->likedPosts()->where('post_id',1)->count();
+//$ss =  LikeResource::collection(\App\Post::find(1)->likes);
 //    return $ss;
 //dd($ss);exit();
 //});
