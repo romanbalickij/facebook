@@ -26,7 +26,7 @@
         </router-link>
 
         <router-link :to="/users/ + authUser.data.user_id" class="px-6 border-b-2 border-white h-full flex items-center">
-            <img src="https://www.publicdomainpictures.net/pictures/270000/velka/avatar-people-person-business-.jpg"
+            <img :src="'/' + authUser.data.attributes.profile_image.data.attributes.path"
                  alt="" class="w-8 h-8 object-cover rounded-full focus:outline-none focus:shadow-outline text-sm">
         </router-link>
 

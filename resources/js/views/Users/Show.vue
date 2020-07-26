@@ -2,11 +2,24 @@
     <div class="flex flex-col items-center" v-if="status.user === 'success' && user">
         <div class="relative mb-8">
             <div class="w-100 h-64 overflow-hidden z-10">
-                <img src="https://i.pinimg.com/originals/af/18/54/af1854b640dc6e65046e6663f0ac51a0.jpg" class="object-cover w-full">
+                <UploadableImage
+                    image-width="1500"
+                    image-height="300"
+                    image-location="cover"
+                    :user-image="user.data.attributes.cover_image"
+                    classes="object-cover w-full"
+                ></UploadableImage>
             </div>
             <div class="absolute flex items-center bottom-0 left-0 -mb-8 ml-12 z-20">
                 <div class="w-32">
-                    <img class="object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg" src="https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png">
+                    <UploadableImage
+                        image-width="1500"
+                        image-height="300"
+                        image-location="profile"
+                        :user-image="user.data.attributes.profile_image"
+                        classes="object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg"
+                    ></UploadableImage>
+<!--                    <img class="object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg" src="https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png">-->
                 </div>
                 <p class="text-2xl text-gray-100 ml-4">{{user.data.attributes.name}}</p>
             </div>
@@ -36,20 +49,22 @@
 
         <div v-else-if="posts.data.length < 1">No posts found</div>
 
-        <Post v-else v-for="post in posts.data" :post="post" :key="post.data.post_id"/>
+        <Post v-else v-for="(post, postKey) in posts.data" :post="post" :key="postKey"/>
 
     </div>
 </template>
 
 <script>
     import Post from '../../components/Post'
+    import UploadableImage from "../../components/UploadableImage";
     import {mapGetters} from 'vuex'
 
     export default {
         name: "Show",
 
         components:{
-          Post
+          Post,
+          UploadableImage
         },
 
         mounted() {

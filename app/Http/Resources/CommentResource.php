@@ -16,17 +16,16 @@ class CommentResource extends JsonResource
     {
         return [
             'data' => [
-                'type' =>'comments',
+                'type' => 'comments',
                 'comment_id' => $this->id,
                 'attributes' => [
                     'commented_by' => new UserResource($this->user),
                     'body' => $this->body,
                     'commented_at' => $this->created_at->diffForHumans(),
                 ]
-
             ],
             'links' => [
-                'self' => url('/posts/'.$this->post_id)
+                'self' => url('/posts/'.$this->post_id),
             ]
         ];
     }

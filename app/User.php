@@ -52,4 +52,29 @@ class User extends Authenticatable
 
         return $this->belongsToMany(Post::class,'likes','user_id','post_id');
     }
+
+    public function images(){
+
+        return $this->hasMany(UserImage::class);
+    }
+
+    public function coverImage() {
+
+        return $this->hasOne(UserImage::class)
+            ->orderByDesc('id')
+            ->where('location','cover')
+            ->withDefault(function ($userImage){
+                $userImage->path = 'user-images/image-defoult.png';
+            });
+    }
+
+    public function profileImage() {
+
+        return $this->hasOne(UserImage::class)
+            ->orderByDesc('id')
+            ->where('location','profile')
+            ->withDefault(function ($userImage){
+                $userImage->path = 'user-images/image-defoult.png';
+            });
+    }
 }

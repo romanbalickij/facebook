@@ -15,9 +15,16 @@ class CommentCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'data' => $this->collection,
+            'data' =>  CommentResource::collection($this->collection),
             'comment_count' => $this->count(),
+          //  'comment_id' => $this->id,
+            'attributes' => [
 
+            ],
+
+            'links' => [
+                'self' => url('/posts'),
+            ]
         ];
     }
 }

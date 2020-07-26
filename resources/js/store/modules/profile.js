@@ -1,8 +1,7 @@
 const state ={
     user:null,
     userStatus:null,
-    posts:null,
-    postsStatus:null
+
 };
 
 const getters ={
@@ -32,10 +31,6 @@ const getters ={
 
     friendship(state) {
        return state.user.data.attributes.friendship;
-    },
-
-    posts(state) {
-        return state.posts;
     },
 
     status(state) {
@@ -110,23 +105,6 @@ const actions ={
 
     },
 
-    fetchUserPost({commit,state},userId) {
-
-        commit('setPostsStatus', 'loading')
-
-        axios.get('/api/users/'+ userId + '/posts')
-            .then(response => {
-
-                commit('setPosts', response.data)
-                commit('setPostsStatus','success');
-            })
-            .catch(error => {
-                console.log('error post get')
-                commit('setPostsStatus','error');
-            });
-    }
-
-
 };
 
 const mutations ={
@@ -146,15 +124,6 @@ const mutations ={
         state.user.data.attributes.friendship = friendship;
     },
 
-    setPostsStatus(state, status) {
-
-        state.postsStatus = state;
-    },
-
-    setPosts(state, userPosts) {
-
-        state.posts = userPosts;
-    }
 
 };
 
